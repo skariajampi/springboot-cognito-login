@@ -1,0 +1,15 @@
+---
+aws:
+  access-key: aws-account-access-id
+  access-secret: aws-account-access-secret
+  cognito:
+    secret: cognito-userpool-app-client-secret
+    clientId: cognito-userpool-app-client-id
+    userPoolId: cognito-userpool-id
+    region: eu-west-2
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://cognito-idp.eu-west-2.amazonaws.com/{cognito-userpool-id}
